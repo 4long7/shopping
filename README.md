@@ -24,19 +24,18 @@
 
 ### 主要练习了
 
-元件的规划使用，
-event bus 使用
-scss 使用，模组化
-vuex 使用，模组化
-api 窜接练习
+1. event bus 使用
+2. scss 使用，模组化
+3. vuex 使用，模组化
+4. api 窜接练习
 
 ### 使用的插件有
 
-axios
-vue-loading-overlay 实现 API 转转状态判断
-vee-validate 表单验证 vue-i18n 验证中文化
-vuex vue-router
-eslint
+1. axios
+2. vue-loading-overlay 实现 API 转转状态判断
+3. vee-validate 表单验证 vue-i18n 验证中文化
+4. vuex vue-router
+5. eslint
 
 ## Project setup
 
