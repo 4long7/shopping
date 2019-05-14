@@ -2,15 +2,15 @@
 
 ### 前台目录
 
-views layout 布局
-pages 里的 view 显示 router-view 的页面
-components 里的是重复使用的元件
+1. views layout 布局
+2. pages 里的 view 显示 router-view 的页面
+3. components 里的是重复使用的元件
 
 ### 后台目录
 
-admin layout 布局
-pages 里的 admin 显示 router-view 的页面
-components 里的是重复使用的元件
+1. admin layout 布局
+2. pages 里的 admin 显示 router-view 的页面
+3. components 里的是重复使用的元件
 
 ### 做不好的
 
