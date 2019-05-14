@@ -1,0 +1,34 @@
+@mixin card($num: 4, $cardWidth: 250px) {
+  .product {
+    @include container(1300px);
+    @include media(ls) {
+      max-width: $cardWidth * ($num - 1) + 50px;
+    }
+    @include media(md) {
+      max-width: $cardWidth * ($num - 2) + 50px;
+    }
+    @include media(sm) {
+      max-width: $cardWidth * ($num - 2) + 50px;
+    }
+    @include media(xs) {
+      max-width: 400px;
+    }
+    @content;
+  }
+}
+
+@mixin mediaWidth($num: 4, $cardWidth: 300px) {
+  @include media(ls) {
+    max-width: $cardWidth * ($num - 1) + 50px;
+  }
+  @include media(md) {
+    max-width: $cardWidth * ($num - 2) + 50px;
+  }
+  @include media(sm) {
+    max-width: $cardWidth * ($num - 2) + 50px;
+  }
+  @include media(xs) {
+    max-width: 400px;
+  }
+  @content;
+}

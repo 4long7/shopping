@@ -1,0 +1,21 @@
+.btn {
+  background-color: color(primary);
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: 1px solid transparent;
+  color: color(light);
+  padding: 0.5rem;
+  letter-spacing: fun(spacing);
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+.mr-1 {
+  margin-left: 10px;
+}
+.primary-font {
+  color: color(primary);
+}
+.disabled {
+  pointer-events: none;
+}

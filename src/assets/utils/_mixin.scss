@@ -1,0 +1,122 @@
+@mixin col($num: 1, $layout: 1, $gap: auto) {
+  $grids: () !default;
+  $defaults: (
+    columns: 24,
+    gap: 2/5
+  ) !default;
+  $grids: map-merge($defaults, $grids);
+  $column: map-get($grids, columns);
+  $col: (100% / $column);
+  @if $gap == auto {
+    $gap: $col * map-get($grids, gap);
+  } @else {
+    $gap: $gap;
+  }
+  @if ($layout == 1) {
+    float: left;
+  } @else if($layout== 2) {
+    display: inline-block;
+    font-size: initial;
+    vertical-align: middle;
+  } @else if($layout== 3) {
+  }
+
+  width: ($col * $num)-$gap;
+  @if ($gap!=0) {
+    margin-left: ($gap/2);
+    margin-right: ($gap/2);
+  }
+}
+
+@mixin container($mw: 1200px, $media: 1) {
+  max-width: $mw;
+  @if $media !=1 {
+    @extend %marginAuto;
+    @extend %clearFloat;
+  } @else {
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+}
+
+@mixin media($name) {
+  $breakpoint: () !default;
+  //预设范围
+  $defaults: (
+    xs: auto 600px,
+    sm: 600px 768px,
+    md: 768px 992px,
+    ls: 992px 1200px,
+    xl: 1200px auto
+  );
+  $point: map-get($breakpoint, $name) or map-get($defaults, $name);
+  @if $point {
+    $min: nth($point, 1);
+    $max: nth($point, 2);
+    @if $min==auto {
+      @media (max-width: $max) {
+        @content;
+      }
+    } @else if $max==auto {
+      @media (min-width: $min) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $min) and(max-width: $max) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin after($content: '') {
+  &::after {
+    content: '#{$content}';
+    @content;
+  }
+}
+
+@mixin before($content: '') {
+  &::before {
+    content: '#{$content}';
+    @content;
+  }
+}
+
+@mixin wh($w: -1, $h: -1) {
+  @if ($w==-1 and $h==-1) {
+    height: 100%;
+    width: 100%;
+  } @else if ($h==0) {
+    height: $w;
+    width: $w;
+  } @else {
+    height: $h;
+    width: $w;
+  }
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin clear-float() {
+  &::after {
+    content: '';
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

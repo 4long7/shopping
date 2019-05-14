@@ -1,0 +1,23 @@
+@function color($name, $level: 1) {
+  @if length(map-get($color, $name)) >1 {
+    @return nth(map-get($color, $name), $level);
+  } @else {
+    @return map-get($color, $name);
+  }
+}
+
+@function colorA($name, $level: 1) {
+  @if length(map-get($adminColor, $name)) >1 {
+    @return nth(map-get($adminColor, $name), $level);
+  } @else {
+    @return map-get($adminColor, $name);
+  }
+}
+
+@function fun($name, $level: 1) {
+  @if length(map-get($fun, $name)) >1 {
+    @return nth(map-get($fun, $name), $level);
+  } @else {
+    @return map-get($fun, $name);
+  }
+}
