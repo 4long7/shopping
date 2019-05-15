@@ -1,4 +1,5 @@
 # shopping2
+demo https://4long7.github.io/shoppings/#/
 
 ### 前台目录
 
