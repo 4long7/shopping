@@ -20,8 +20,8 @@ export default {
   data () {
     return {
       userData: {
-        username: '4long7@gmail.com',
-        password: '689161'
+        username: '',
+        password: ''
       }
     }
   },
